@@ -5,41 +5,50 @@
 
 ## Description
 
-Student-Co-pilot is a tool designed to assist students in their learning journey.
+Student-Co-pilot is a tool designed to assist students in their learning journey. This is a web application built with Next.js.
 
 ## Key Features and Highlights
 
 - Student learning assistance
 - A unified hub for all your essential tools
 
-
 ## Installation
 
-To use Student-Co-pilot, follow these steps:
+To set up and run Student-Co-pilot locally, follow these steps:
 
-1. Clone the repository using:
+1. **Clone the repository:**
    ```bash
    git clone https://github.com/your-username/Student-Co-pilot.git
    ```
 
-2. Navigate to the project directory:
+2. **Navigate to the project directory:**
    ```bash
-   cd Student-Co-pilot
+   cd Student-Co-pilot/Student_Co-pilot
    ```
 
-3. Install dependencies:
+3. **Install dependencies:**
+   This project uses npm for package management.
    ```bash
    npm install
    ```
 
 ## Usage
 
-Here is an example of how to use Student-Co-pilot:
+To start the development server, run the following command:
 
-```javascript
-const student = new Student();
-student.study();
+```bash
+npm run dev
 ```
+
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+
+You can start editing the page by modifying any of the files in the `pages` directory. The page auto-updates as you edit the file.
+
+### Other Scripts
+
+- **`npm run build`**: Builds the application for production.
+- **`npm run start`**: Starts a production server.
+- **`npm run lint`**: Runs the linter to check for code quality issues.
 
 ## Contributing
 
@@ -54,4 +63,4 @@ We welcome contributions to Student-Co-pilot. To contribute, follow these steps:
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the MIT License.
