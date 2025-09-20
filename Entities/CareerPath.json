@@ -1,0 +1,78 @@
+{
+  "name": "CareerPath",
+  "type": "object",
+  "properties": {
+    "career_title": {
+      "type": "string",
+      "description": "Career title/role"
+    },
+    "interests": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "User interests that led to this career suggestion"
+    },
+    "required_skills": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Skills needed for this career"
+    },
+    "recommended_courses": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Courses to take for this career"
+    },
+    "roadmap": {
+      "type": "object",
+      "description": "Step-by-step career roadmap",
+      "properties": {
+        "short_term": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "medium_term": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "long_term": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "salary_range": {
+      "type": "string",
+      "description": "Expected salary range"
+    },
+    "job_market_outlook": {
+      "type": "string",
+      "description": "Market demand and growth prospects"
+    },
+    "is_saved": {
+      "type": "boolean",
+      "default": false
+    }
+  },
+  "required": [
+    "career_title"
+  ],
+  "rls": {
+    "read": {
+      "created_by": "{{user.email}}"
+    },
+    "write": {
+      "created_by": "{{user.email}}"
+    }
+  }
+}

@@ -1,0 +1,61 @@
+{
+  "name": "ChatConversation",
+  "type": "object",
+  "properties": {
+    "title": {
+      "type": "string",
+      "description": "Conversation title"
+    },
+    "messages": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "role": {
+            "type": "string",
+            "enum": [
+              "user",
+              "ai"
+            ]
+          },
+          "content": {
+            "type": "string"
+          },
+          "timestamp": {
+            "type": "string",
+            "format": "date-time"
+          }
+        }
+      }
+    },
+    "conversation_type": {
+      "type": "string",
+      "enum": [
+        "mentor",
+        "study",
+        "career",
+        "research"
+      ],
+      "default": "mentor"
+    },
+    "mood_context": {
+      "type": "string",
+      "description": "User's emotional state when starting conversation"
+    },
+    "topic": {
+      "type": "string",
+      "description": "Main topic or subject being discussed"
+    }
+  },
+  "required": [
+    "title"
+  ],
+  "rls": {
+    "read": {
+      "created_by": "{{user.email}}"
+    },
+    "write": {
+      "created_by": "{{user.email}}"
+    }
+  }
+}

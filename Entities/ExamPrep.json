@@ -1,0 +1,95 @@
+{
+  "name": "ExamPrep",
+  "type": "object",
+  "properties": {
+    "exam_name": {
+      "type": "string",
+      "description": "Name of the exam"
+    },
+    "exam_date": {
+      "type": "string",
+      "format": "date",
+      "description": "Date of the exam"
+    },
+    "subject": {
+      "type": "string",
+      "description": "Subject area"
+    },
+    "syllabus": {
+      "type": "string",
+      "description": "Exam syllabus content"
+    },
+    "predicted_questions": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "AI-predicted likely questions"
+    },
+    "weak_areas": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Areas needing more focus"
+    },
+    "mock_test_scores": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "date": {
+            "type": "string",
+            "format": "date"
+          },
+          "score": {
+            "type": "number"
+          },
+          "total_questions": {
+            "type": "number"
+          }
+        }
+      }
+    },
+    "study_plan": {
+      "type": "object",
+      "description": "Personalized study schedule",
+      "properties": {
+        "daily_hours": {
+          "type": "number"
+        },
+        "topics_schedule": {
+          "type": "object"
+        }
+      }
+    },
+    "youtube_suggestions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "title": {
+            "type": "string"
+          },
+          "url": {
+            "type": "string"
+          }
+        }
+      },
+      "description": "AI-suggested YouTube videos for studying"
+    }
+  },
+  "required": [
+    "exam_name",
+    "exam_date",
+    "subject"
+  ],
+  "rls": {
+    "read": {
+      "created_by": "{{user.email}}"
+    },
+    "write": {
+      "created_by": "{{user.email}}"
+    }
+  }
+}

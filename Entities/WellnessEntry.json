@@ -1,0 +1,60 @@
+{
+  "name": "WellnessEntry",
+  "type": "object",
+  "properties": {
+    "date": {
+      "type": "string",
+      "format": "date",
+      "description": "Date of the entry"
+    },
+    "mood_rating": {
+      "type": "number",
+      "minimum": 1,
+      "maximum": 10,
+      "description": "Mood rating from 1-10"
+    },
+    "stress_level": {
+      "type": "number",
+      "minimum": 1,
+      "maximum": 10,
+      "description": "Stress level from 1-10"
+    },
+    "journal_entry": {
+      "type": "string",
+      "description": "Daily journal reflection"
+    },
+    "study_hours": {
+      "type": "number",
+      "description": "Hours spent studying"
+    },
+    "break_times": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Times when breaks were taken"
+    },
+    "affirmation": {
+      "type": "string",
+      "description": "AI-generated daily affirmation"
+    },
+    "goals_completed": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Goals completed today"
+    }
+  },
+  "required": [
+    "date"
+  ],
+  "rls": {
+    "read": {
+      "created_by": "{{user.email}}"
+    },
+    "write": {
+      "created_by": "{{user.email}}"
+    }
+  }
+}

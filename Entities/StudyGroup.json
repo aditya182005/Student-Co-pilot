@@ -1,0 +1,84 @@
+{
+  "name": "StudyGroup",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "Study group name"
+    },
+    "subject": {
+      "type": "string",
+      "description": "Subject or topic focus"
+    },
+    "description": {
+      "type": "string",
+      "description": "Group description and goals"
+    },
+    "members": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Member user emails"
+    },
+    "max_members": {
+      "type": "number",
+      "default": 8
+    },
+    "meeting_schedule": {
+      "type": "string",
+      "description": "When the group meets"
+    },
+    "goals": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Group study goals"
+    },
+    "resources_shared": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "title": {
+            "type": "string"
+          },
+          "url": {
+            "type": "string"
+          },
+          "shared_by": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "is_active": {
+      "type": "boolean",
+      "default": true
+    }
+  },
+  "required": [
+    "name",
+    "subject"
+  ],
+  "rls": {
+    "read": {
+      "is_active": true
+    },
+    "write": {
+      "$or": [
+        {
+          "created_by": "{{user.email}}"
+        },
+        {
+          "members": {
+            "$in": [
+              "{{user.email}}"
+            ]
+          }
+        }
+      ]
+    }
+  }
+}

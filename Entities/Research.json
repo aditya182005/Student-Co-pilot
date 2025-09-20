@@ -1,0 +1,80 @@
+{
+  "name": "ResearchPaper",
+  "type": "object",
+  "properties": {
+    "title": {
+      "type": "string",
+      "description": "Research paper title"
+    },
+    "authors": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Paper authors"
+    },
+    "file_url": {
+      "type": "string",
+      "description": "URL of uploaded paper"
+    },
+    "summary": {
+      "type": "string",
+      "description": "AI-generated summary"
+    },
+    "key_points": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Important findings and points"
+    },
+    "definitions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "term": {
+            "type": "string"
+          },
+          "definition": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "methodology": {
+      "type": "string",
+      "description": "Research methodology summary"
+    },
+    "conclusions": {
+      "type": "string",
+      "description": "Main conclusions"
+    },
+    "difficulty_level": {
+      "type": "string",
+      "enum": [
+        "undergraduate",
+        "graduate",
+        "phd",
+        "expert"
+      ],
+      "default": "undergraduate"
+    },
+    "field": {
+      "type": "string",
+      "description": "Research field/domain"
+    }
+  },
+  "required": [
+    "title",
+    "file_url"
+  ],
+  "rls": {
+    "read": {
+      "created_by": "{{user.email}}"
+    },
+    "write": {
+      "created_by": "{{user.email}}"
+    }
+  }
+}

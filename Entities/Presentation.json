@@ -1,0 +1,81 @@
+{
+  "name": "Presentation",
+  "type": "object",
+  "properties": {
+    "title": {
+      "type": "string",
+      "description": "Presentation title"
+    },
+    "source_material_id": {
+      "type": "string",
+      "description": "Reference to source study material"
+    },
+    "slides": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "slide_number": {
+            "type": "number"
+          },
+          "title": {
+            "type": "string"
+          },
+          "content": {
+            "type": "string"
+          },
+          "bullet_points": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "slide_type": {
+            "type": "string",
+            "enum": [
+              "title",
+              "content",
+              "conclusion",
+              "references"
+            ]
+          }
+        }
+      }
+    },
+    "template_style": {
+      "type": "string",
+      "enum": [
+        "academic",
+        "modern",
+        "minimal",
+        "creative"
+      ],
+      "default": "academic"
+    },
+    "estimated_duration": {
+      "type": "number",
+      "description": "Estimated presentation time in minutes"
+    },
+    "target_audience": {
+      "type": "string",
+      "enum": [
+        "students",
+        "professors",
+        "general",
+        "peers"
+      ],
+      "default": "peers"
+    }
+  },
+  "required": [
+    "title"
+  ],
+  "rls": {
+    "read": {
+      "created_by": "{{user.email}}"
+    },
+    "write": {
+      "created_by": "{{user.email}}"
+    }
+  }
+}

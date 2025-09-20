@@ -1,0 +1,56 @@
+{
+  "name": "Achievement",
+  "type": "object",
+  "properties": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "type": {
+      "type": "string",
+      "enum": [
+        "streak",
+        "milestone",
+        "skill",
+        "time",
+        "quiz"
+      ],
+      "default": "milestone"
+    },
+    "badge_icon": {
+      "type": "string"
+    },
+    "date_earned": {
+      "type": "string",
+      "format": "date"
+    },
+    "points": {
+      "type": "number",
+      "default": 10
+    },
+    "rarity": {
+      "type": "string",
+      "enum": [
+        "common",
+        "rare",
+        "epic",
+        "legendary"
+      ],
+      "default": "common"
+    }
+  },
+  "required": [
+    "title",
+    "description"
+  ],
+  "rls": {
+    "read": {
+      "created_by": "{{user.email}}"
+    },
+    "write": {
+      "created_by": "{{user.email}}"
+    }
+  }
+}

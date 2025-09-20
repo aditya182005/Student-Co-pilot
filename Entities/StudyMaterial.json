@@ -1,0 +1,65 @@
+{
+  "name": "StudyMaterial",
+  "type": "object",
+  "properties": {
+    "title": {
+      "type": "string",
+      "description": "Title of the study material"
+    },
+    "file_url": {
+      "type": "string",
+      "description": "URL of the uploaded file"
+    },
+    "file_type": {
+      "type": "string",
+      "enum": [
+        "pdf",
+        "docx",
+        "txt",
+        "image"
+      ],
+      "description": "Type of uploaded file"
+    },
+    "subject": {
+      "type": "string",
+      "description": "Subject or topic area"
+    },
+    "extracted_content": {
+      "type": "string",
+      "description": "AI-extracted text content"
+    },
+    "summary": {
+      "type": "string",
+      "description": "AI-generated summary"
+    },
+    "key_concepts": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Important concepts identified by AI"
+    },
+    "difficulty_level": {
+      "type": "string",
+      "enum": [
+        "beginner",
+        "intermediate",
+        "advanced"
+      ],
+      "default": "intermediate"
+    }
+  },
+  "required": [
+    "title",
+    "file_url",
+    "file_type"
+  ],
+  "rls": {
+    "read": {
+      "created_by": "{{user.email}}"
+    },
+    "write": {
+      "created_by": "{{user.email}}"
+    }
+  }
+}

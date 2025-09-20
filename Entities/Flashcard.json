@@ -1,0 +1,54 @@
+{
+  "name": "Flashcard",
+  "type": "object",
+  "properties": {
+    "study_material_id": {
+      "type": "string",
+      "description": "Reference to study material"
+    },
+    "front": {
+      "type": "string",
+      "description": "Question/term"
+    },
+    "back": {
+      "type": "string",
+      "description": "Answer/definition"
+    },
+    "difficulty": {
+      "type": "string",
+      "enum": [
+        "easy",
+        "medium",
+        "hard"
+      ],
+      "default": "medium"
+    },
+    "next_review": {
+      "type": "string",
+      "format": "date"
+    },
+    "review_count": {
+      "type": "number",
+      "default": 0
+    },
+    "correct_streak": {
+      "type": "number",
+      "default": 0
+    },
+    "subject": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "front",
+    "back"
+  ],
+  "rls": {
+    "read": {
+      "created_by": "{{user.email}}"
+    },
+    "write": {
+      "created_by": "{{user.email}}"
+    }
+  }
+}

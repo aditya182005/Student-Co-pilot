@@ -1,0 +1,86 @@
+{
+  "name": "CodeSubmission",
+  "type": "object",
+  "properties": {
+    "title": {
+      "type": "string",
+      "description": "Title or description of the code"
+    },
+    "code": {
+      "type": "string",
+      "description": "The actual code content"
+    },
+    "language": {
+      "type": "string",
+      "enum": [
+        "javascript",
+        "python",
+        "java",
+        "cpp",
+        "c",
+        "html",
+        "css",
+        "react",
+        "other"
+      ],
+      "description": "Programming language"
+    },
+    "review": {
+      "type": "object",
+      "description": "AI code review results",
+      "properties": {
+        "bugs_found": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "suggestions": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "security_issues": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "performance_tips": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "overall_score": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 100
+        }
+      }
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "pending",
+        "reviewed",
+        "improved"
+      ],
+      "default": "pending"
+    }
+  },
+  "required": [
+    "title",
+    "code",
+    "language"
+  ],
+  "rls": {
+    "read": {
+      "created_by": "{{user.email}}"
+    },
+    "write": {
+      "created_by": "{{user.email}}"
+    }
+  }
+}
