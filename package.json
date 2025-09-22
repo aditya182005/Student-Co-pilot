@@ -1,0 +1,25 @@
+
+{
+  "name": "student-co-pilot",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aditya182005/Student-Co-pilot.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/aditya182005/Student-Co-pilot/issues"
+  },
+  "homepage": "https://github.com/aditya182005/Student-Co-pilot#readme",
+  "description": ""
+}
+
+
+
+
